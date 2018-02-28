@@ -1,0 +1,21 @@
+body {
+  background: steelblue;
+  color: white;
+}
+
+.snackbar {
+  background: rgb(40, 40, 40);
+  height: 80px;
+  text-align: center;
+  padding: 8px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+  transform: translate3d(0, 96px, 0);
+}
+
+.snackbar--show {
+  transform: translate3d(0, 0, 0) !important;
+}

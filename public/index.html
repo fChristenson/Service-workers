@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+  <h1>Notifications</h1>
+  <a href="/foo">foo</a>
+  <a href="/bar">bar</a>
+  <ul data-js="notifications"></ul>
+  <div class="snackbar" data-js="snackbar">
+    <p>You have new messages!</p>
+    <button data-js="load-messages">Load new messages</button>
+  </div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', async () => {
+        const registration = await navigator.serviceWorker.register('/sw.js');
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      });
+    }
+  </script>
+  <script src="/main.js"></script>
+</body>
+
+</html>
